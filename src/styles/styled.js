@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Button = styled.button`
   background-color: initial;
@@ -54,7 +55,7 @@ export const Input = styled.input`
 `
 
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     background-color: #011804;
     width: 50rem;
     border-radius: 0.7rem;
@@ -70,7 +71,7 @@ export const Container = styled.div`
     -moz-box-shadow: -1px 1px 35px 0px #51f0a8;
 `
 
-export const Listed = styled.div`
+export const Listed = styled(motion.div)`
     background-color: #011804;
     border-radius: 0.7rem;
     margin-top: 2rem;
