@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import List from "./List";
+// styles
+import { Button,Input,Container,Listed } from "../styles/styled";
 
 const ToDo = ()=>{
 
@@ -16,16 +18,20 @@ const ToDo = ()=>{
         userInput.current.focus()
     },[list])
     return(
-        <div>
-            <h1>To Do List</h1>
-            <input ref={userInput} type="text" />
-            <button onClick={addItem}>Add</button>
-            <ul>
-            {list.map((item, index) => (
-                <List item={item} index={index} setList={setList} list={list} />
-            ))}
-            </ul>
-        </div>
+        <>
+            <Container>
+                <h1>To Do List</h1>
+                <Input ref={userInput} type="text" />
+                <Button onClick={addItem}>ADD</Button>
+            </Container>
+            <Listed>
+                <ul>
+                {list.map((item, index) => (
+                    <List item={item} index={index} setList={setList} list={list} />
+                ))}
+                </ul>
+            </Listed>
+        </>
     )
 }
 

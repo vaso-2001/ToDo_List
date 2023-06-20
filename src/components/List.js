@@ -1,4 +1,6 @@
 import React from "react";
+//styles
+import {StyledList, StyledListCont,DeleteButton,ListItemCont} from "../styles/styled";
 
 const List =({item, index, setList, list})=>{
     const deleteItem =(index)=>{
@@ -8,10 +10,12 @@ const List =({item, index, setList, list})=>{
     }
     return (
         <div>
-            <>
-                <li key={index}>{item}</li>
-                <button onClick={deleteItem}>X</button>
-            </>
+            <StyledListCont>
+                <ListItemCont>
+                    <StyledList key={index}>{item}</StyledList>
+                </ListItemCont>
+                <DeleteButton onClick={deleteItem}>X</DeleteButton>
+            </StyledListCont>
         </div>
     );
 }
